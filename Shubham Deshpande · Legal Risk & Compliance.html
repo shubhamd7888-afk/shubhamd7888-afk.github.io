@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shubham Deshpande · Legal Risk & Compliance</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --white:        #FFFFFF;
+  --off-white:    #F8F6F1;
+  --light-gray:   #F0EDE6;
+  --ink:          #111111;
+  --ink-soft:     #333333;
+  --muted:        #777777;
+  --muted-light:  #AAAAAA;
+  --gold:         #B8960C;
+  --gold-mid:     #D4AF37;
+  --gold-light:   #F5EEC8;
+  --gold-pale:    #FAF5DC;
+  --border:       #E8E4DA;
+  --border-dark:  #333333;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  'Inter', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', monospace;
+
+  --max-w: 1160px;
+  --pad:   52px;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+body { background: var(--white); color: var(--ink); font-family: var(--font-sans); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--white); }
+::-webkit-scrollbar-thumb { background: var(--gold-mid); border-radius: 4px; }
+
+.wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
+
+.sec-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 48px;
+}
+.sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-wrap {
+  max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad);
+  height: 58px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: 0.2px; }
+.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-links a { font-size: 11px; font-weight: 500; letter-spacing: 1.8px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-badge {
+  font-family: var(--font-mono); font-size: 10px; color: var(--gold);
+  border: 1px solid var(--gold-mid); padding: 4px 12px; border-radius: 20px;
+}
+
+/* ── HERO ── */
+.hero {
+  max-width: var(--max-w); margin: 0 auto; padding: 90px var(--pad) 80px;
+  display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: end;
+  border-bottom: 2px solid var(--ink);
+  animation: fadeUp 0.6s ease both;
+}
+.hero-tag {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-tag::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+h1.hero-name {
+  font-family: var(--font-serif); font-size: clamp(50px, 5.5vw, 78px);
+  font-weight: 700; line-height: 0.95; letter-spacing: -0.5px;
+  color: var(--ink); margin-bottom: 28px;
+}
+h1.hero-name em { font-style: italic; color: var(--gold); }
+
+.hero-intro {
+  font-family: var(--font-sans); font-size: 15px; color: var(--muted);
+  max-width: 540px; line-height: 1.9; margin-bottom: 32px;
+}
+.hero-intro strong { color: var(--ink); font-weight: 600; }
+.hero-intro em { font-style: normal; color: var(--gold); font-weight: 500; }
+
+.hero-links {
+  display: flex; flex-wrap: wrap; gap: 18px;
+  font-size: 13px; color: var(--muted);
+}
+.hero-links a { color: var(--gold); text-decoration: none; font-weight: 500; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+.hero-links a:hover { border-bottom-color: var(--gold); }
+
+/* STATS */
+.hero-stats { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.stat { padding: 20px 26px; border-bottom: 1px solid var(--border); background: var(--white); }
+.stat:last-child { border-bottom: none; }
+.stat:first-child { background: var(--ink); }
+.stat:first-child .stat-num { color: var(--gold-mid); }
+.stat:first-child .stat-label { color: rgba(255,255,255,0.55); }
+.stat-num { font-family: var(--font-serif); font-size: 36px; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 5px; }
+.stat-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); line-height: 1.5; }
+
+/* ── INTRO STRIP ── */
+.intro-strip {
+  background: var(--ink); color: var(--white);
+  padding: 56px var(--pad);
+}
+.intro-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+}
+.intro-quote {
+  font-family: var(--font-serif); font-size: 28px; font-weight: 400;
+  font-style: italic; color: var(--white); line-height: 1.45;
+  border-left: 3px solid var(--gold-mid); padding-left: 24px;
+}
+.intro-quote em { color: var(--gold-mid); font-style: normal; }
+.intro-body { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.85; }
+.intro-body strong { color: var(--white); font-weight: 600; }
+
+/* ── SECTIONS ── */
+section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+section.alt { background: var(--off-white); }
+
+/* ── CASE STUDIES ── */
+.cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.case-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 10px; padding: 32px; position: relative; overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+}
+.case-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-mid));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+}
+.case-card:hover { box-shadow: 0 8px 32px rgba(184,150,12,0.12); transform: translateY(-3px); border-color: var(--gold-mid); }
+.case-card:hover::before { transform: scaleX(1); }
+
+.case-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.case-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink); line-height: 1.3; margin-bottom: 16px; }
+.case-body { font-family: var(--font-sans); font-size: 13.5px; color: var(--muted); line-height: 1.9; margin-bottom: 20px; }
+.case-body strong { color: var(--ink-soft); font-weight: 600; }
+.case-result {
+  background: var(--gold-pale); border-left: 3px solid var(--gold-mid);
+  padding: 12px 16px; border-radius: 0 6px 6px 0;
+  font-family: var(--font-sans); font-size: 13px; font-style: italic;
+  color: var(--ink-soft); line-height: 1.6;
+}
+
+/* ── EXPERTISE ── */
+.exp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+.exp-block { background: var(--white); padding: 34px 28px; transition: background 0.25s; }
+.exp-block:hover { background: var(--gold-pale); }
+.exp-icon { font-size: 26px; margin-bottom: 16px; display: block; }
+.exp-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+.exp-desc { font-family: var(--font-sans); font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+.exp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.exp-tag { font-size: 11px; font-weight: 500; padding: 3px 9px; border: 1px solid var(--border); color: var(--muted); border-radius: 4px; background: var(--off-white); }
+
+/* ── TIMELINE ── */
+.timeline { position: relative; padding-left: 38px; }
+.timeline::before { content: ''; position: absolute; left: 3px; top: 12px; bottom: 12px; width: 1px; background: linear-gradient(to bottom, var(--gold), var(--border)); }
+.tl-item { position: relative; margin-bottom: 52px; opacity: 0; transform: translateY(16px); transition: opacity 0.5s, transform 0.5s; }
+.tl-item:last-child { margin-bottom: 0; }
+.tl-item.visible { opacity: 1; transform: translateY(0); }
+.tl-item::before { content: ''; position: absolute; left: -42px; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold-mid); box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--gold-mid); }
+section.alt .tl-item::before { box-shadow: 0 0 0 3px var(--off-white), 0 0 0 5px var(--gold-mid); }
+.tl-date { font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 6px; }
+.tl-role { font-family: var(--font-serif); font-size: 24px; font-weight: 600; color: var(--ink); line-height: 1.2; margin-bottom: 3px; }
+.tl-org { font-family: var(--font-sans); font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+.tl-points { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.tl-points li { font-family: var(--font-sans); font-size: 14px; color: var(--muted); padding-left: 20px; position: relative; line-height: 1.75; }
+.tl-points li::before { content: '→'; position: absolute; left: 0; top: 2px; color: var(--gold); font-size: 11px; }
+.tl-points li strong { color: var(--ink-soft); font-weight: 600; }
+
+/* ── QUALIFICATIONS ── */
+.qual-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.qual-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 22px 24px; display: flex; gap: 16px; align-items: flex-start; transition: border-color 0.25s, box-shadow 0.25s; }
+.qual-card:hover { border-color: var(--gold-mid); box-shadow: 0 4px 16px rgba(184,150,12,0.09); }
+.qual-icon { width: 40px; height: 40px; background: var(--gold-pale); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.qual-title { font-family: var(--font-sans); font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+.qual-body { font-family: var(--font-sans); font-size: 12px; color: var(--muted); line-height: 1.55; }
+.badge { display: inline-block; font-family: var(--font-mono); font-size: 9px; font-weight: 500; padding: 3px 9px; border-radius: 12px; margin-top: 8px; text-transform: uppercase; letter-spacing: 0.8px; }
+.badge-done { background: #E8F5EC; color: #2A6B3A; }
+.badge-prog { background: var(--gold-light); color: var(--gold); }
+.badge-plan { background: var(--light-gray); color: var(--muted); }
+
+/* ── SKILLS ── */
+.skills-wrap { display: flex; flex-direction: column; gap: 10px; }
+.skill-row { display: flex; align-items: flex-start; gap: 20px; padding: 16px 20px; background: var(--white); border: 1px solid var(--border); border-radius: 8px; transition: border-color 0.25s; }
+.skill-row:hover { border-color: var(--gold-mid); }
+.sk-cat { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted-light); width: 145px; flex-shrink: 0; padding-top: 5px; }
+.sk-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag { font-family: var(--font-sans); font-size: 12px; font-weight: 500; padding: 5px 11px; border-radius: 4px; border: 1px solid; line-height: 1; }
+.tag-legal  { background: var(--ink); border-color: var(--ink); color: var(--white); }
+.tag-aml    { background: var(--gold-pale); border-color: rgba(184,150,12,0.35); color: var(--gold); }
+.tag-reg    { background: var(--light-gray); border-color: var(--border); color: var(--ink-soft); }
+.tag-bank   { background: var(--white); border-color: var(--border); color: var(--muted); }
+.tag-tool   { background: var(--white); border-color: var(--border); color: var(--muted); }
+
+/* ── CONTACT ── */
+.contact-section { background: var(--ink); color: var(--white); border: none; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.contact-head { font-family: var(--font-serif); font-size: 40px; font-weight: 600; line-height: 1.2; color: var(--white); margin-bottom: 20px; }
+.contact-head em { font-style: italic; color: var(--gold-mid); }
+.contact-note { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.8; }
+.contact-note strong { color: var(--white); font-weight: 600; }
+.c-lines { display: flex; flex-direction: column; }
+.c-row { display: flex; align-items: center; gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.c-row:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+.c-icon { width: 38px; height: 38px; background: rgba(212,175,55,0.12); border: 1px solid rgba(212,175,55,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.c-lbl { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 3px; }
+.c-val { font-size: 14px; font-weight: 500; color: var(--white); }
+.c-val a { color: var(--gold-mid); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+.c-val a:hover { border-bottom-color: var(--gold-mid); }
+
+/* ── FOOTER ── */
+footer { background: var(--ink); padding: 20px var(--pad); border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 1.5px; text-transform: uppercase; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+  :root { --pad: 22px; }
+  .hero { grid-template-columns: 1fr; }
+  .intro-inner { grid-template-columns: 1fr; gap: 32px; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .exp-grid { grid-template-columns: 1fr; }
+  .qual-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-wrap">
+    <a href="#" class="nav-logo">Shubham Deshpande</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#cases">Work</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#qualifications">Qualifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-badge">● Available May 2026</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="hero-tag">Legal Risk &nbsp;·&nbsp; AML &nbsp;·&nbsp; Financial Regulation</div>
+    <h1 class="hero-name">Shubham<br><em>Deshpande</em></h1>
+    <p class="hero-intro">
+      I'm a lawyer-turned-compliance professional, currently completing an <strong>LLM in International Financial Regulation at Brunel University London</strong>.
+      Before London, I spent several years in India working across financial institutions and courts — first as an independent advocate, then as the <em>only legally qualified person</em> responsible for a ₹4,500 crore regional loan portfolio at HDFC Ltd.
+      I'm looking for a compliance or financial crime role in the UK where I can bring both the legal grounding and the hands-on regulatory experience I've built across two jurisdictions.
+    </p>
+    <div class="hero-links">
+      <span>📍 Barons Court, London W14</span>
+      <span>📧 <a href="mailto:shubhamd7888@gmail.com">shubhamd7888@gmail.com</a></span>
+      <span>🔗 <a href="https://linkedin.com/in/sd-deshpande" target="_blank">LinkedIn</a></span>
+      <span>🔗 <a href="https://shubhamdeshpande.github.io" target="_blank">shubhamdeshpande.github.io</a></span>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">₹4,500Cr</div>
+      <div class="stat-label">Loan portfolio<br>I was responsible for</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">800+</div>
+      <div class="stat-label">Active cases<br>managed independently</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5</div>
+      <div class="stat-label">Legal forums<br>DRT · DRAT · NCLAT · Arb · Consumer</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">AML jurisdictions<br>UK · India · East Africa</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT STRIP -->
+<div id="about" class="intro-strip">
+  <div class="intro-inner">
+    <div class="intro-quote">
+      "I didn't just work on a loan book.<br>
+      I was <em>accountable</em> for it —<br>
+      every case, every fraud flag,<br>every court date."
+    </div>
+    <div class="intro-body">
+      <p style="margin-bottom:16px;">When I joined HDFC Ltd, I was the only legally trained professional covering the entire Central Maharashtra zone. There was no team to hand things off to. If a fraud needed escalating, I escalated it. If a case was listed at the DRT, I prepared the file. If the merger meant 800 active proceedings needed updating, I updated them.</p>
+      <p style="margin-bottom:16px;">That experience — <strong>being the single point of accountability</strong> for a large, complex portfolio — shaped how I approach compliance work. I don't treat it as a checklist exercise. I treat it as something that has real consequences if it's done wrong.</p>
+      <p>Now, at Brunel, I'm building the regulatory framework knowledge — FCA, UK MLR 2017, POCA 2002 — to complement that practical foundation. I'm ready to bring both to a UK financial services team from May 2026.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CASE STUDIES -->
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-label">01 &nbsp;·&nbsp; Selected Work</div>
+    <div class="cases-grid">
+
+      <div class="case-card reveal">
+        <div class="case-tag">Fraud &nbsp;·&nbsp; HDFC Ltd</div>
+        <div class="case-title">Spotting Loan Fraud Before It Became a Problem</div>
+        <div class="case-body">
+          Part of managing a large loan portfolio is recognising when something doesn't add up. Across the Central Maharashtra region, I identified a pattern of irregularities — <strong>fabricated title documents, inconsistent income declarations and suspected identity misrepresentation</strong> in several loan files. Because the loans were tagged to my region, it was my responsibility to act.
+          <br><br>
+          Rather than push straight for litigation — which would have been slow, public and damaging — I escalated to Head Office in Mumbai, built the evidentiary file and led direct negotiations with the parties involved. The goal was <strong>recovery with minimum brand exposure</strong>, and that's what we achieved.
+        </div>
+        <div class="case-result">Matters settled through structured negotiation — recovery protected, no adverse regulatory attention, no public proceedings.</div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-tag">Merger Compliance &nbsp;·&nbsp; 2023</div>
+        <div class="case-title">When India's Largest Merger Hit My Desk</div>
+        <div class="case-body">
+          In July 2023, HDFC Ltd merged into HDFC Bank — the <strong>largest merger in Indian corporate history</strong>. For most people it was a headline. For me, it was 800+ active court and tribunal proceedings that all needed updating to reflect the new legal entity.
+          <br><br>
+          I was the sole legal resource in Central Maharashtra throughout the transition. Every <strong>substitution application at DRT, DRAT and NCLAT</strong>, every updated tribunal record, every piece of compliance data sent to Head Office — that was my responsibility. We couldn't afford proceedings to lapse or records to be wrong. None did.
+        </div>
+        <div class="case-result">Full legal transition completed across all active files — no proceedings disrupted, all records updated within the merger compliance window.</div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-tag">Litigation Management &nbsp;·&nbsp; DRT · DRAT</div>
+        <div class="case-title">800 Cases. One Person. One Region.</div>
+        <div class="case-body">
+          The Central Maharashtra zone had over <strong>800 active litigation cases</strong> when I was there — across the Debt Recovery Tribunal, DRAT, NCLAT, Arbitration and Consumer Courts. Many involved <strong>ancestral loan defaults</strong>, where the original borrower had died and legal heirs were disputing enforcement. These cases required careful handling — legally, practically and sometimes personally.
+          <br><br>
+          There was no legal team. I briefed external counsel, tracked every hearing, managed evidence files and kept Head Office reporting accurate. It was demanding, and it taught me a level of <strong>case ownership and accountability</strong> that's difficult to replicate in a larger team setting.
+        </div>
+        <div class="case-result">Portfolio managed with full data integrity across the entire tenure — Head Office reporting delivered without interruption.</div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-tag">NCLAT &nbsp;·&nbsp; IBC &nbsp;·&nbsp; Insolvency</div>
+        <div class="case-title">Protecting Creditor Position in Insolvency Proceedings</div>
+        <div class="case-body">
+          Several corporate borrowers in the portfolio entered insolvency proceedings under the <strong>Insolvency & Bankruptcy Code</strong>. When matters reached the National Company Law Appellate Tribunal, I assisted external counsel in building HDFC Ltd's case as a <strong>secured financial creditor</strong>.
+          <br><br>
+          This meant pulling together loan statements, security documents, demand notices and correspondence into a coherent evidentiary record — making sure the institution's position was <strong>documented, defensible and clearly presented</strong> at appellate stage. I coordinated strategy with Head Office and managed the files end to end.
+        </div>
+        <div class="case-result">Secured creditor status upheld in all supported matters — creditor position maintained at appellate stage throughout tenure.</div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-tag">AML &nbsp;·&nbsp; SAR &nbsp;·&nbsp; Clyde Solicitors London</div>
+        <div class="case-title">Filing a SAR in the Middle of a Live Client Matter</div>
+        <div class="case-body">
+          At Clyde Solicitors, I was handling AML due diligence for clients across <strong>three jurisdictions — UK, India and East Africa</strong> under UK Money Laundering Regulations 2017. Several matters involved multi-layered corporate structures where <strong>UBO tracing</strong> required working through multiple holding entities.
+          <br><br>
+          One client flagged during enhanced screening. I prepared the <strong>internal Suspicious Activity Report, escalated to the MLRO under POCA 2002</strong> and managed the process through to resolution — without the client matter being derailed. It required careful judgement about timing, communication and what could and couldn't be disclosed.
+        </div>
+        <div class="case-result">Full compliance maintained — matter resolved, SAR process completed correctly, no adverse SRA findings on file review.</div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-tag">KYC &nbsp;·&nbsp; EDD &nbsp;·&nbsp; HDFC Bank</div>
+        <div class="case-title">A PEP That Needed More Than a Standard KYC Form</div>
+        <div class="case-body">
+          At HDFC Bank post-merger, a prospective client came through with political affiliations that triggered <strong>Enhanced Due Diligence</strong> under RBI KYC Master Direction 2016 — classifying them as a <strong>Politically Exposed Person</strong>.
+          <br><br>
+          Standard KYC wasn't sufficient. I ran source of funds verification, cross-checked against <strong>OFAC and UN sanctions lists</strong>, escalated to the branch compliance officer and prepared a full risk assessment file for senior sign-off. The account was approved conditionally — with <strong>enhanced monitoring and mandatory quarterly review</strong> built into the relationship from day one.
+        </div>
+        <div class="case-result">EDD process completed correctly — account approved with appropriate controls, no findings on subsequent RBI audit.</div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-tag">Arbitration &nbsp;·&nbsp; HDFC Ltd</div>
+        <div class="case-title">Builder Disputes and Counterclaims — Arbitration in Practice</div>
+        <div class="case-body">
+          Not all disputes in the portfolio went to court. Several ended up in <strong>arbitration</strong> — builder disputes, title challenges and borrower counterclaims against enforcement. These required a different kind of preparation: position papers, contractual documentation, and a clear narrative for the arbitrator.
+          <br><br>
+          Where disbursements were disputed, I worked with the technical and credit teams to build a <strong>complete evidentiary record</strong> — showing clearly what conditions had been met, when security had been created, and why the institution's position was sound.
+        </div>
+        <div class="case-result">All arbitration matters concluded with HDFC Ltd's security position intact — no adverse awards in the zone during tenure.</div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-tag">RBI Inspection &nbsp;·&nbsp; KYC Remediation</div>
+        <div class="case-title">Getting a Branch Ready for an RBI Inspection</div>
+        <div class="case-body">
+          Before an RBI compliance inspection at HDFC Bank, I ran a <strong>KYC remediation exercise</strong> across the branch — reviewing customer files, identifying gaps, flagging expired records and incomplete CDD profiles. Each file that wasn't right got a remediation action. High-risk accounts went first.
+          <br><br>
+          It was methodical, unglamorous work — but it's exactly the kind of preparation that determines whether a compliance function is genuinely embedded or just theoretical. I also prepared the <strong>branch compliance summary</strong> for the regional compliance officer ahead of the inspection.
+        </div>
+        <div class="case-result">Branch received a satisfactory RBI rating — no major findings raised on inspection.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise" class="alt">
+  <div class="wrap">
+    <div class="sec-label">02 &nbsp;·&nbsp; What I Bring</div>
+    <div class="exp-grid">
+      <div class="exp-block reveal">
+        <span class="exp-icon">⚖️</span>
+        <div class="exp-title">Legal Risk & Litigation</div>
+        <p class="exp-desc">I've managed 800+ active cases as the only lawyer in a region. I know what it means to be accountable for a portfolio — not just to support one. DRT, DRAT, NCLAT, Arbitration, IBC proceedings and merger compliance across a landmark transaction.</p>
+        <div class="exp-tags"><span class="exp-tag">DRT / DRAT</span><span class="exp-tag">NCLAT</span><span class="exp-tag">Arbitration</span><span class="exp-tag">IBC</span><span class="exp-tag">NPA Recovery</span><span class="exp-tag">Merger Compliance</span></div>
+      </div>
+      <div class="exp-block reveal">
+        <span class="exp-icon">🔍</span>
+        <div class="exp-title">AML & Financial Crime</div>
+        <p class="exp-desc">From PEP escalations and SAR filings to UBO tracing through complex offshore structures. Practical experience under both RBI and UK frameworks — not just theoretical knowledge of the regulations.</p>
+        <div class="exp-tags"><span class="exp-tag">KYC / CDD / EDD</span><span class="exp-tag">SAR Filing</span><span class="exp-tag">PEP Screening</span><span class="exp-tag">Sanctions</span><span class="exp-tag">UBO Tracing</span><span class="exp-tag">FATF</span></div>
+      </div>
+      <div class="exp-block reveal">
+        <span class="exp-icon">📋</span>
+        <div class="exp-title">Regulatory Compliance</div>
+        <p class="exp-desc">I understand regulation from both sides — as a practitioner in India under RBI, and now in the UK context through Brunel and Clyde Solicitors. FCA, UK MLR 2017, POCA 2002, SRA standards, RBI KYC Master Direction.</p>
+        <div class="exp-tags"><span class="exp-tag">FCA</span><span class="exp-tag">UK MLR 2017</span><span class="exp-tag">POCA 2002</span><span class="exp-tag">RBI</span><span class="exp-tag">SRA</span><span class="exp-tag">IBC 2016</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-label">03 &nbsp;·&nbsp; Career</div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-date">Sep 2025 — Mar 2026</div>
+        <div class="tl-role">Legal Assistant — Compliance & AML</div>
+        <div class="tl-org">Clyde Solicitors Ltd &nbsp;·&nbsp; London, UK</div>
+        <ul class="tl-points">
+          <li>AML and KYC due diligence under <strong>UK MLR 2017</strong> for clients across UK, India and East Africa</li>
+          <li>UBO tracing and beneficial ownership verification through multi-layer corporate structures</li>
+          <li>SAR preparation and MLRO escalation under <strong>POCA 2002</strong> — managed from trigger to resolution</li>
+          <li>Full SRA compliance maintained across all files on review</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Jul 2023 — Dec 2024</div>
+        <div class="tl-role">Deputy Manager — NPA & Legal Risk Control</div>
+        <div class="tl-org">HDFC Bank Ltd (D-SIB) &nbsp;·&nbsp; India</div>
+        <ul class="tl-points">
+          <li>KYC and AML compliance — CDD, EDD, PEP screening and sanctions checks under RBI framework</li>
+          <li>NPA management — legal risk assessment, DRT coordination and one-time settlement negotiations</li>
+          <li>Master file approvals for secured loan accounts — title due diligence and legal opinion drafting</li>
+          <li>Led branch KYC remediation ahead of RBI inspection — satisfactory rating received</li>
+          <li>Post-merger legal compliance and transition support following the HDFC Ltd merger</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2022 — Jul 2023</div>
+        <div class="tl-role">Management Trainee — Legal</div>
+        <div class="tl-org">HDFC Ltd (Housing Development Finance Corporation) &nbsp;·&nbsp; Central Maharashtra Zone, India</div>
+        <ul class="tl-points">
+          <li>The <strong>only legally qualified professional</strong> in the Central Maharashtra zone — sole point of accountability for all legal matters across the region</li>
+          <li>Responsible for a <strong>₹4,500 crore regional loan portfolio</strong> — because the loans were tagged to my region, the legal risk was mine to manage</li>
+          <li>Managed <strong>800+ active litigation cases</strong> independently across DRT, DRAT, NCLAT, Arbitration and Consumer Courts</li>
+          <li>Briefed and directed external counsel — maintained full litigation data and <strong>reported to Head Office Mumbai</strong></li>
+          <li>Identified suspected loan fraud across the portfolio — escalated and led <strong>negotiated resolution to contain brand risk</strong></li>
+          <li>Delivered <strong>merger compliance for the HDFC Ltd → HDFC Bank transition</strong> (July 2023) — updated all tribunal records, no proceedings disrupted</li>
+          <li>Assisted counsel in <strong>NCLAT insolvency proceedings under IBC</strong> — secured creditor file preparation and appellate management</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Aug 2021 — 2022</div>
+        <div class="tl-role">Independent Legal Practitioner</div>
+        <div class="tl-org">Under Adv. Jaydeep Vaishampayan &nbsp;·&nbsp; Nasik, India</div>
+        <ul class="tl-points">
+          <li>Debt recovery and financial litigation at <strong>District Court and Bombay High Court</strong></li>
+          <li>NI Act Section 138 matters — cheque dishonour with parallel civil and criminal recovery strategy</li>
+          <li>Property conveyancing, title searches, mortgage documentation and legal drafting</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFICATIONS -->
+<section id="qualifications" class="alt">
+  <div class="wrap">
+    <div class="sec-label">04 &nbsp;·&nbsp; Qualifications</div>
+    <div class="qual-grid">
+      <div class="qual-card reveal">
+        <div class="qual-icon">🎓</div>
+        <div>
+          <div class="qual-title">LLM — International Financial Regulation & Corporate Law</div>
+          <div class="qual-body">Brunel University London &nbsp;·&nbsp; Jan 2025 – May 2026<br>Financial Regulation, Investment Law, Corporate Law, CBDCs & Digital Finance</div>
+          <span class="badge badge-prog">In Progress</span>
+        </div>
+      </div>
+      <div class="qual-card reveal">
+        <div class="qual-icon">⚖️</div>
+        <div>
+          <div class="qual-title">Enrolled Advocate — Bar Council of India</div>
+          <div class="qual-body">Enrolled 2021 &nbsp;·&nbsp; Bar Council of India<br>Full rights of audience — District Courts, High Courts and Appellate Tribunals</div>
+          <span class="badge badge-done">Enrolled</span>
+        </div>
+      </div>
+      <div class="qual-card reveal">
+        <div class="qual-icon">📚</div>
+        <div>
+          <div class="qual-title">BBA LLB (Hons)</div>
+          <div class="qual-body">Bharati Vidyapeeth University, Pune &nbsp;·&nbsp; Graduated 2021<br>Integrated five-year law and business degree</div>
+          <span class="badge badge-done">Completed</span>
+        </div>
+      </div>
+      <div class="qual-card reveal">
+        <div class="qual-icon">📊</div>
+        <div>
+          <div class="qual-title">Bloomberg Market Concepts</div>
+          <div class="qual-body">Bloomberg &nbsp;·&nbsp; Fixed Income, Equities, Economics, Currencies</div>
+          <span class="badge badge-prog">In Progress</span>
+        </div>
+      </div>
+      <div class="qual-card reveal">
+        <div class="qual-icon">🔒</div>
+        <div>
+          <div class="qual-title">ICA Certificate in AML</div>
+          <div class="qual-body">International Compliance Association</div>
+          <span class="badge badge-plan">Planned</span>
+        </div>
+      </div>
+      <div class="qual-card reveal">
+        <div class="qual-icon">🤖</div>
+        <div>
+          <div class="qual-title">Generative AI for Banking</div>
+          <div class="qual-body">HDFC Bank Internal Training Programme</div>
+          <span class="badge badge-done">Completed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-label">05 &nbsp;·&nbsp; Skills</div>
+    <div class="skills-wrap">
+      <div class="skill-row reveal">
+        <div class="sk-cat">Legal Risk</div>
+        <div class="sk-tags">
+          <span class="tag tag-legal">Litigation Management</span>
+          <span class="tag tag-legal">DRT / DRAT</span>
+          <span class="tag tag-legal">NCLAT</span>
+          <span class="tag tag-legal">Arbitration</span>
+          <span class="tag tag-legal">NPA Recovery</span>
+          <span class="tag tag-legal">Fraud Escalation</span>
+          <span class="tag tag-legal">Legal Opinion Drafting</span>
+          <span class="tag tag-legal">Merger Compliance</span>
+          <span class="tag tag-legal">Counsel Management</span>
+        </div>
+      </div>
+      <div class="skill-row reveal">
+        <div class="sk-cat">AML · Financial Crime</div>
+        <div class="sk-tags">
+          <span class="tag tag-aml">Anti-Money Laundering</span>
+          <span class="tag tag-aml">KYC</span>
+          <span class="tag tag-aml">CDD / EDD</span>
+          <span class="tag tag-aml">Sanctions Screening</span>
+          <span class="tag tag-aml">SAR Filing</span>
+          <span class="tag tag-aml">PEP Screening</span>
+          <span class="tag tag-aml">UBO Tracing</span>
+          <span class="tag tag-aml">Transaction Monitoring</span>
+        </div>
+      </div>
+      <div class="skill-row reveal">
+        <div class="sk-cat">Regulatory</div>
+        <div class="sk-tags">
+          <span class="tag tag-reg">FCA</span>
+          <span class="tag tag-reg">UK MLR 2017</span>
+          <span class="tag tag-reg">POCA 2002</span>
+          <span class="tag tag-reg">FATF</span>
+          <span class="tag tag-reg">OFAC / OFSI</span>
+          <span class="tag tag-reg">RBI KYC Master Direction</span>
+          <span class="tag tag-reg">IBC 2016</span>
+          <span class="tag tag-reg">SRA Standards</span>
+        </div>
+      </div>
+      <div class="skill-row reveal">
+        <div class="sk-cat">Banking · Finance</div>
+        <div class="sk-tags">
+          <span class="tag tag-bank">Loan Portfolio Management</span>
+          <span class="tag tag-bank">Credit Risk</span>
+          <span class="tag tag-bank">Debt Recovery</span>
+          <span class="tag tag-bank">OTS Negotiation</span>
+          <span class="tag tag-bank">Secured Lending</span>
+          <span class="tag tag-bank">Regulatory Reporting</span>
+          <span class="tag tag-bank">Title Due Diligence</span>
+        </div>
+      </div>
+      <div class="skill-row reveal">
+        <div class="sk-cat">Tools</div>
+        <div class="sk-tags">
+          <span class="tag tag-tool">Bloomberg Terminal</span>
+          <span class="tag tag-tool">LexisNexis</span>
+          <span class="tag tag-tool">Microsoft Office</span>
+          <span class="tag tag-tool">Google Workspace</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="wrap" style="padding-top: 80px; padding-bottom: 80px;">
+    <div class="sec-label" style="color: rgba(255,255,255,0.3);">06 &nbsp;·&nbsp; Get in Touch
+      <span style="flex:1; height:1px; background: rgba(255,255,255,0.1); display:block;"></span>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-head">Let's talk about<br><em>what good<br>compliance</em><br>looks like.</div>
+        <p class="contact-note" style="margin-top:20px;">
+          I'm open to AML Analyst, KYC Analyst, Financial Crime Analyst and Compliance roles across UK financial services.<br><br>
+          Permanent and contract both considered.<br>
+          Available from <strong>May 2026</strong>.<br><br>
+          Happy to have an informal conversation before any formal process.
+        </p>
+      </div>
+      <div class="c-lines reveal">
+        <div class="c-row">
+          <div class="c-icon">📧</div>
+          <div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:shubhamd7888@gmail.com">shubhamd7888@gmail.com</a></div></div>
+        </div>
+        <div class="c-row">
+          <div class="c-icon">🔗</div>
+          <div><div class="c-lbl">LinkedIn</div><div class="c-val"><a href="https://linkedin.com/in/sd-deshpande" target="_blank">linkedin.com/in/sd-deshpande</a></div></div>
+        </div>
+        <div class="c-row">
+          <div class="c-icon">🌐</div>
+          <div><div class="c-lbl">Portfolio</div><div class="c-val"><a href="https://shubhamdeshpande.github.io" target="_blank">shubhamdeshpande.github.io</a></div></div>
+        </div>
+        <div class="c-row">
+          <div class="c-icon">📍</div>
+          <div><div class="c-lbl">Location</div><div class="c-val">Barons Court, London W14</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>Shubham Deshpande &nbsp;·&nbsp; Enrolled Advocate &nbsp;·&nbsp; Legal Risk & Compliance</div>
+  <div>Available May 2026 &nbsp;·&nbsp; London</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 65);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.reveal, .tl-item').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
