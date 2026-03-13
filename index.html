@@ -179,7 +179,7 @@ section.alt { background: var(--off-white); }
 /* ── TIMELINE ── */
 .timeline { position: relative; padding-left: 38px; }
 .timeline::before { content: ''; position: absolute; left: 3px; top: 12px; bottom: 12px; width: 1px; background: linear-gradient(to bottom, var(--gold), var(--border)); }
-.tl-item { position: relative; margin-bottom: 52px; opacity: 0; transform: translateY(16px); transition: opacity 0.5s, transform 0.5s; }
+.tl-item { position: relative; margin-bottom: 52px; opacity: 1; transform: translateY(0); transition: opacity 0.5s, transform 0.5s; }
 .tl-item:last-child { margin-bottom: 0; }
 .tl-item.visible { opacity: 1; transform: translateY(0); }
 .tl-item::before { content: ''; position: absolute; left: -42px; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold-mid); box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--gold-mid); }
@@ -237,7 +237,7 @@ section.alt .tl-item::before { box-shadow: 0 0 0 3px var(--off-white), 0 0 0 5px
 footer { background: var(--ink); padding: 20px var(--pad); border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 1.5px; text-transform: uppercase; }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 900px) {
