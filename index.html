@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shubham Deshpande | Enforcement &amp; Financial Crime Professional</title>
+<title>Shubham Deshpande | Compliance &amp; Financial Crime Professional</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -11,10 +11,10 @@
   --black: #0a0a0a;
   --black-soft: #1a1a1a;
   --black-mid: #2a2a2a;
-  --gold: #c6a34e;
-  --gold-light: #dbb963;
-  --gold-pale: #f0e1b8;
-  --gold-muted: rgba(198, 163, 78, 0.12);
+  --gold: #5d9fd4;
+  --gold-light: #8ec4e8;
+  --gold-pale: #d6e9f7;
+  --gold-muted: rgba(93, 159, 212, 0.12);
   --white: #ffffff;
   --off-white: #fafaf8;
   --grey-100: #f5f5f3;
@@ -41,7 +41,7 @@ nav {
   position: fixed; top: 0; width: 100%; z-index: 100;
   background: rgba(10, 10, 10, 0.96);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(198, 163, 78, 0.15);
+  border-bottom: 1px solid rgba(93, 159, 212, 0.15);
 }
 
 nav .nav-inner {
@@ -78,8 +78,8 @@ nav .nav-links a:hover { color: var(--gold); }
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(198,163,78,0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 30%, rgba(198,163,78,0.04) 0%, transparent 40%);
+    radial-gradient(ellipse at 20% 50%, rgba(93,159,212,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 30%, rgba(93,159,212,0.04) 0%, transparent 40%);
 }
 
 .hero-content {
@@ -127,7 +127,7 @@ nav .nav-links a:hover { color: var(--gold); }
 }
 
 .hero-tag {
-  border: 1px solid rgba(198,163,78,0.3);
+  border: 1px solid rgba(93,159,212,0.3);
   color: var(--gold-light);
   padding: 8px 20px; border-radius: 4px;
   font-size: 0.72rem; font-weight: 600;
@@ -195,6 +195,20 @@ section { padding: 90px 28px; }
 }
 
 .stat-item:last-child { border-bottom: none; }
+
+.stat-strip.inline {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  border: 1px solid rgba(93,159,212,0.18);
+}
+.stat-strip.inline .stat-item {
+  border-bottom: none; border-right: 1px solid rgba(255,255,255,0.06);
+  flex-direction: column; align-items: flex-start; gap: 4px; padding: 18px 22px;
+}
+.stat-strip.inline .stat-item:last-child { border-right: none; }
+@media (max-width: 768px) {
+  .stat-strip.inline { grid-template-columns: 1fr 1fr; }
+  .stat-strip.inline .stat-item { border-bottom: 1px solid rgba(255,255,255,0.06); }
+}
 
 .stat-label { color: rgba(255,255,255,0.45); font-size: 0.8rem; font-weight: 500; }
 
@@ -278,7 +292,7 @@ section { padding: 90px 28px; }
 
 .rating-chip {
   background: var(--gold-muted);
-  border: 1px solid rgba(198,163,78,0.2);
+  border: 1px solid rgba(93,159,212,0.2);
   color: var(--gold);
   padding: 4px 12px; border-radius: 4px;
   font-size: 0.68rem; font-weight: 700;
@@ -303,7 +317,7 @@ section { padding: 90px 28px; }
 }
 
 .case-card:hover {
-  border-color: rgba(198,163,78,0.3);
+  border-color: rgba(93,159,212,0.3);
   transform: translateY(-2px);
 }
 
@@ -325,7 +339,7 @@ section { padding: 90px 28px; }
 
 .case-tag {
   display: inline-block; margin-top: 12px;
-  border: 1px solid rgba(198,163,78,0.25);
+  border: 1px solid rgba(93,159,212,0.25);
   color: var(--gold-light);
   padding: 3px 10px; border-radius: 3px;
   font-size: 0.62rem; font-weight: 700;
@@ -441,11 +455,11 @@ section { padding: 90px 28px; }
 
 .contact-btn.outline {
   background: transparent; color: var(--gold);
-  border: 1px solid rgba(198,163,78,0.3);
+  border: 1px solid rgba(93,159,212,0.3);
 }
 
 .contact-btn.outline:hover {
-  background: rgba(198,163,78,0.1);
+  background: rgba(93,159,212,0.1);
   border-color: var(--gold);
 }
 
@@ -472,6 +486,66 @@ footer a { color: var(--gold); text-decoration: none; }
 }
 
 /* ===== RESPONSIVE ===== */
+/* ===== REGULATORY WORK ===== */
+.reg-section {
+  background: var(--black); padding: 110px 28px;
+  position: relative; overflow: hidden;
+}
+.reg-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 85% 15%, rgba(93,159,212,0.07) 0%, transparent 45%),
+    radial-gradient(ellipse at 10% 85%, rgba(93,159,212,0.05) 0%, transparent 40%);
+  pointer-events: none;
+}
+.reg-section .section-inner { position: relative; z-index: 2; }
+.reg-section .section-title { color: var(--white); }
+.reg-section .section-lead { color: rgba(255,255,255,0.5); }
+.reg-chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 50px; }
+.reg-chips span {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--gold-light); border: 1px solid rgba(93,159,212,0.35);
+  padding: 7px 14px; border-radius: 2px;
+}
+.reg-abstract {
+  background: var(--off-white); border-left: 3px solid var(--gold);
+  padding: 38px 42px; margin-bottom: 56px;
+  box-shadow: 0 14px 44px rgba(0,0,0,0.45);
+}
+.reg-abstract h3 {
+  font-family: 'Playfair Display', serif; font-size: 1.4rem;
+  color: var(--black-soft); margin-bottom: 6px; font-weight: 600; line-height: 1.3;
+}
+.reg-abstract .reg-meta {
+  font-size: 0.72rem; font-weight: 600; color: var(--gold);
+  letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px;
+}
+.reg-abstract p { font-size: 0.93rem; color: var(--grey-800); margin-bottom: 14px; }
+.reg-abstract p:last-child { margin-bottom: 0; }
+.reg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.reg-card {
+  background: var(--black-soft); padding: 32px 28px;
+  border: 1px solid rgba(93,159,212,0.18); border-top: 2px solid var(--gold);
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.reg-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(93,159,212,0.45);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.5);
+}
+.reg-card h4 {
+  font-family: 'Playfair Display', serif; font-size: 1.08rem;
+  color: var(--white); margin-bottom: 4px; font-weight: 600;
+}
+.reg-card .reg-tag {
+  font-size: 0.68rem; font-weight: 700; color: var(--gold);
+  letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; display: block;
+}
+.reg-card p { font-size: 0.87rem; color: rgba(255,255,255,0.55); line-height: 1.75; }
+@media (max-width: 900px) { .reg-grid { grid-template-columns: 1fr; } .reg-abstract { padding: 28px 24px; } }
+@media (prefers-reduced-motion: reduce) { .reg-card { transition: none; } .reg-card:hover { transform: none; } }
+
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.4rem; }
   .about-grid, .pi-grid, .edu-grid, .cases-grid { grid-template-columns: 1fr; }
@@ -497,6 +571,7 @@ footer a { color: var(--gold); text-decoration: none; }
     <a href="#" class="logo">Shubham Deshpande</a>
     <div class="nav-links">
       <a href="#about">About</a>
+      <a href="#regulatory">Regulatory Work</a>
       <a href="#experience">Experience</a>
       <a href="#cases">Case Studies</a>
       <a href="#skills">Skills</a>
@@ -511,21 +586,21 @@ footer a { color: var(--gold); text-decoration: none; }
   <div class="hero-content">
     <div class="hero-eyebrow">
       <span></span>
-      <em>Debt Enforcement &bull; Legal Recovery &bull; Compliance</em>
+      <em>Compliance &bull; Financial Crime &bull; Legal Recovery</em>
       <span></span>
     </div>
     <h1>Shubham <span class="gold">Deshpande</span></h1>
     <p class="hero-subtitle">
-      Qualified Lawyer and debt enforcement professional with courtroom experience in fraud prosecution
-      and 2+ years leading secured asset recovery at India's largest private-sector bank. Currently
-      completing an LLM in International Financial Regulation and Corporate Law at Brunel University London.
-      Available from May 2026.
+      Compliance and financial crime professional, qualified lawyer with courtroom experience in fraud
+      prosecution, and 2+ years in credit risk and enforcement at India's largest private-sector bank.
+      LLM in International Financial Regulation &amp; Corporate Law, Brunel University London &ndash;
+      awarded with Merit (UK 2:1 equivalent), June 2026. Available immediately.
     </p>
     <div class="hero-tags">
-      <span class="hero-tag solid">Available from 01 May 2026</span>
+      <span class="hero-tag solid">Available Immediately &bull; No Sponsorship Required</span>
       <span class="hero-tag">Enrolled Advocate &ndash; Bar Council of India</span>
       <span class="hero-tag">LLM International Financial Regulation &amp; Corporate Law</span>
-      <span class="hero-tag">2+ Years Debt Enforcement &amp; Legal Recovery</span>
+      <span class="hero-tag">2+ Years Banking Compliance, Risk &amp; Recovery</span>
     </div>
   </div>
 </section>
@@ -534,8 +609,8 @@ footer a { color: var(--gold); text-decoration: none; }
 <section id="about" class="about-section">
   <div class="section-inner">
     <div class="section-eyebrow"><span></span><em>About</em></div>
-    <h2 class="section-title">Where law meets<br>debt enforcement.</h2>
-    <div class="about-grid">
+    <h2 class="section-title">Where law meets<br>financial regulation.</h2>
+    <div class="about-grid" style="grid-template-columns:1fr;">
       <div class="about-text">
         <p>I am a qualified Indian lawyer holding a Bachelor of Business Administration and Legislative Laws (BBA LLB) and enrolled as an Advocate with the Bar Council of India, with appearance rights before District, Sessions, and High Courts. I currently work as a paralegal at a London-based solicitors firm, and bring 2+ years of frontline debt enforcement and legal recovery experience at HDFC Bank Ltd, preceded by independent legal practice where I appeared as junior counsel in Ponzi scheme and cooperative bank fraud proceedings.</p>
 
@@ -543,41 +618,51 @@ footer a { color: var(--gold); text-decoration: none; }
 
         <p>My Predictive Index profile identifies me as a natural Collaborator &ndash; patient, steady under pressure, empathetic, and process-driven. My HDFC Bank appraiser rated me &ldquo;Role Model&rdquo; for professional ethics and &ldquo;Exceptional Contributor&rdquo; for vendor management.</p>
 
-        <p>I am currently completing an LLM in International Financial Regulation &amp; Corporate Law at Brunel University London. I am targeting Certificated Enforcement Agent, Debt Recovery, and Legal Compliance roles in the UK from May 2026 &ndash; a strategic career path where human judgement, empathy, and legal expertise remain indispensable.</p>
+        <p>I hold an LLM in International Financial Regulation &amp; Corporate Law from Brunel University London, awarded with Merit in June 2026, with a dissertation on Central Bank Digital Currencies. I am targeting Compliance, Financial Crime (AML/KYC), Regulatory Operations, and Debt Recovery roles in the UK &ndash; work where legal training, banking experience, and regulatory judgement meet.</p>
       </div>
-      <div class="stat-strip">
-        <div class="stat-item">
-          <span class="stat-label">Team Managed</span>
-          <span class="stat-value">7 Staff &bull; 8 Districts</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-label">Appraisal &ndash; Ethics</span>
-          <span class="stat-value gold">Role Model</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-label">Appraisal &ndash; Vendor Mgmt</span>
-          <span class="stat-value gold">Exceptional Contributor</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-label">Appraisal &ndash; Customer</span>
-          <span class="stat-value gold">Always Demonstrates</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-label">Predictive Index</span>
-          <span class="stat-value">Collaborator</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-label">BCI Enrollment</span>
-          <span class="stat-value">MAH/8612/2021</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-label">Available From</span>
-          <span class="stat-value gold">01 May 2026</span>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>
+
+<!-- REGULATORY WORK -->
+<section id="regulatory" class="reg-section">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span></span><em>Legal &amp; Compliance</em></div>
+    <h2 class="section-title">Regulatory Research &amp; Writing</h2>
+    <p class="section-lead">Postgraduate research and working notes on the UK regulatory frameworks I work with &ndash; written to be read, not recited.</p>
+    <div class="reg-chips">
+      <span>FCA</span><span>PRA</span><span>Consumer Duty</span><span>SMCR</span><span>UK MLR 2017</span><span>FATF</span><span>PSD2</span><span>CPMI-IOSCO</span><span>EU AML Framework</span>
+    </div>
+
+    <div class="reg-abstract">
+      <h3>Legitimacy Gaps and Execution Challenges in Central Bank Digital Currencies</h3>
+      <div class="reg-meta">LLM Dissertation &bull; Doctrinal &amp; Comparative Study, UK&ndash;EU &bull; 12,492 words &bull; OSCOLA-cited &bull; Brunel University London, 2026</div>
+      <p>This dissertation examines why Central Bank Digital Currencies face a legitimacy problem that technical design alone cannot solve. Comparing the UK's digital pound programme with the EU's digital euro framework, it identifies two distinct gaps: a <strong>legitimacy gap</strong>, where the legal mandates of central banks were not written with retail digital currency in mind, and an <strong>execution gap</strong>, where privacy, AML/CFT obligations, and financial-stability safeguards pull the design in opposing directions.</p>
+      <p>The study engages FATF Recommendations, the EU AML framework, PSD2, and the CPMI-IOSCO Principles for Financial Market Infrastructures, and argues that the jurisdiction that resolves the accountability question first &ndash; not the one that ships the technology first &ndash; will set the international standard.</p>
+    </div>
+
+    <div class="reg-grid">
+      <div class="reg-card">
+        <span class="reg-tag">FCA &bull; Regulatory Note</span>
+        <h4>Consumer Duty: Outcomes Over Box-Ticking</h4>
+        <p>The Consumer Duty moved UK conduct regulation from "did you follow the process?" to "did the customer end up in a fair position?" Having spent two years negotiating repayment arrangements with distressed borrowers, I read the Duty as a codification of what good collections practice already looks like: assessing vulnerability before enforcement, communicating so customers actually understand, and evidencing why an outcome was fair. The hard part for firms isn't policy drafting &ndash; it's proving outcomes with data.</p>
+      </div>
+      <div class="reg-card">
+        <span class="reg-tag">FCA / PRA &bull; Regulatory Note</span>
+        <h4>SMCR: Accountability as Architecture</h4>
+        <p>The Senior Managers &amp; Certification Regime answers a simple question the financial crisis exposed: when something goes wrong, whose name is on it? Statements of Responsibilities, the Certification Regime, and the Conduct Rules build a chain of individual accountability from board to front line. At HDFC Bank I operated inside a comparable escalation-and-ownership structure &ndash; every high-risk account had a named owner and an audit trail. SMCR makes that discipline statutory.</p>
+      </div>
+      <div class="reg-card">
+        <span class="reg-tag">MLR 2017 &bull; Regulatory Note</span>
+        <h4>UK MLR 2017: Risk-Based CDD in Practice</h4>
+        <p>The Money Laundering Regulations 2017 replace one-size-fits-all checks with a risk-based approach: standard CDD as the baseline, simplified where risk is demonstrably low, enhanced where it is high &ndash; PEPs, high-risk third countries, unusual transaction patterns. At Clyde Solicitors I applied this in client onboarding under SRA supervision; my Basel Institute training focused on the operational analysis of suspicious transaction reports that sits downstream of it. The regime works when escalation is a reflex, not a form.</p>
+      </div>
+    </div>
+
+      </div>
+</section>
+
 
 <!-- EXPERIENCE -->
 <section id="experience" class="exp-section">
@@ -586,11 +671,23 @@ footer a { color: var(--gold); text-decoration: none; }
     <h2 class="section-title">Professional Experience</h2>
     <p class="section-lead">From UK legal practice and statutory debt enforcement to courtroom advocacy in fraud prosecution &ndash; a career built at the intersection of law, debt recovery, and compliance.</p>
 
-    <!-- CLYDE SOLICITORS (UK - FIRST) -->
+    <!-- DISSERTATION RESEARCHER -->
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-role">Postgraduate Dissertation Researcher</div>
+        <span class="exp-period">Feb 2026 &ndash; April 2026</span>
+      </div>
+      <div class="exp-org">Brunel University London &bull; Brunel Law School</div>
+      <ul class="exp-highlights">
+        <li>Conducted full-time doctrinal and comparative legal research on Central Bank Digital Currencies across the UK and EU frameworks, engaging FATF Recommendations, the EU AML framework, PSD2, and CPMI-IOSCO Principles.</li>
+        <li>Produced a 12,492-word OSCOLA-cited dissertation to submission deadline; degree awarded with Merit, June 2026.</li>
+      </ul>
+    </div>
+<!-- CLYDE SOLICITORS (UK - FIRST) -->
     <div class="exp-card">
       <div class="exp-header">
         <div class="exp-role">Paralegal / Legal Assistant (Part-Time)</div>
-        <span class="exp-period">2024 &ndash; Present</span>
+        <span class="exp-period">Sept 2025 &ndash; Feb 2026</span>
       </div>
       <div class="exp-org">Clyde Solicitors, London &bull; Immigration &amp; Medical Negligence</div>
       <ul class="exp-highlights">
@@ -637,6 +734,25 @@ footer a { color: var(--gold); text-decoration: none; }
         <span class="rating-chip">Always Demonstrates &ndash; Customer &amp; Collaboration</span>
       </div>
     </div>
+
+    <div class="stat-strip inline" style="margin:8px 0 34px;">
+        <div class="stat-item">
+          <span class="stat-label">Team Managed</span>
+          <span class="stat-value">7 Staff &bull; 8 Districts</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Predictive Index</span>
+          <span class="stat-value">Collaborator</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">BCI Enrollment</span>
+          <span class="stat-value">MAH/8612/2021</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Availability</span>
+          <span class="stat-value gold">Immediate</span>
+        </div>
+      </div>
 
     <!-- ADVOCATE PRACTICE (Adv. Jaydeep Vaishampayan) -->
     <div class="exp-card">
@@ -821,8 +937,8 @@ footer a { color: var(--gold); text-decoration: none; }
     <!-- BRUNEL LLM -->
     <div class="edu-card" style="margin-bottom:20px;">
       <div class="edu-degree">LLM International Financial Regulation &amp; Corporate Law</div>
-      <div class="edu-inst">Brunel University London &bull; PG Brunel Law School &bull; January 2025 &ndash; 2026 (Expected) &bull; FHEQ Level 7</div>
-      <div class="edu-details" style="margin-bottom:12px;">Dissertation: Legal analysis of Central Bank Digital Currency (CBDC) regulatory frameworks.</div>
+      <div class="edu-inst">Brunel University London &bull; Brunel Law School &bull; January 2025 &ndash; June 2026 &bull; Awarded with Merit (UK 2:1 equivalent) &bull; FHEQ Level 7</div>
+      <div class="edu-details" style="margin-bottom:12px;">Dissertation: <em>Legitimacy Gaps and Execution Challenges in Central Bank Digital Currencies &ndash; A Doctrinal and Comparative Study Between the UK and the EU</em> (12,492 words, OSCOLA-cited). See abstract below.</div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
         <div>
@@ -835,7 +951,7 @@ footer a { color: var(--gold); text-decoration: none; }
           </div>
         </div>
         <div>
-          <div style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Current Modules (Year 2)</div>
+          <div style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Completed Modules (Year 2)</div>
           <div class="edu-details">
             &bull; Theory of International Financial Regulation<br>
             &bull; Banking and Tech Law<br>
@@ -920,6 +1036,10 @@ footer a { color: var(--gold); text-decoration: none; }
       </div>
       <div class="cert-item">
         <span class="cert-dot plan"></span>
+        <div><div class="cert-name">Bloomberg Market Concepts</div><div class="cert-org">Bloomberg &bull; In Progress</div></div>
+      </div>
+      <div class="cert-item">
+        <span class="cert-dot plan"></span>
         <div><div class="cert-name">CICM Level 2</div><div class="cert-org">Chartered Institute of Credit Management &bull; Planned</div></div>
       </div>
     </div>
@@ -930,8 +1050,8 @@ footer a { color: var(--gold); text-decoration: none; }
 <section id="contact" class="contact-section">
   <div class="section-inner">
     <div class="section-eyebrow" style="justify-content:center;"><span></span><em>Contact</em><span></span></div>
-    <h2 class="section-title">Available from 01 May 2026</h2>
-    <p class="contact-lead">Open to Certificated Enforcement Agent, Debt Recovery Officer, Legal Enforcement, and Compliance roles across London and the UK.</p>
+    <h2 class="section-title">Available Immediately</h2>
+    <p class="contact-lead">Open to Compliance Analyst, Financial Crime / AML / KYC, Regulatory Operations, Debt Recovery, and Legal roles across London and the UK. UK Graduate Visa applied &ndash; two years unrestricted work rights, no sponsorship required.</p>
     <div class="contact-links">
       <a href="mailto:shubhamd7888@gmail.com" class="contact-btn primary">Email Me</a>
       <a href="https://www.linkedin.com/in/sd-deshpande" class="contact-btn outline" target="_blank">LinkedIn</a>
